@@ -1,0 +1,28 @@
+{
+  "name": "express-serve-static-gzip",
+  "version": "1.0.0",
+  "description": "Express Middleware for Serving Static Files that have been Precompiled with Gzip",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hone/express-serve-static-gzip.git"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": [
+    "Terence Lee <hone02@gmail.com>",
+    "Avrohom Katz <iambpentameter@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hone/express-serve-static-gzip/issues"
+  },
+  "homepage": "https://github.com/hone/express-serve-static-gzip#readme",
+  "dependencies": {
+    "mime": "^1.3.4"
+  }
+}
