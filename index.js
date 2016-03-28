@@ -12,6 +12,7 @@ module.exports = function(assetPath) {
 
         if (acceptEncodings.indexOf('gzip') >= 0 && stats.isFile()) {
           res.append('Content-Encoding', 'gzip');
+          res.setHeader('Vary', 'Accept-Encoding');
           req.url = `${req.url}.gz`;
         }
       } catch(e) {
