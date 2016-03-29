@@ -15,15 +15,16 @@ module.exports = function(assetPath) {
           res.setHeader('Vary', 'Accept-Encoding');
           res.setHeader('Cache-Control', 'public, max-age=512000');
           req.url = `${req.url}.gz`;
+
+          var type = mime.lookup(`${assetPath}/${originalPath}`);
+          if (typeof type != 'undefined') {
+            var charset = mime.charsets.lookup(type);
+            res.setHeader('Content-Type', type + (charset ? '; charset=' + charset : ''));
+          }
         }
       } catch(e) {
       }
     }
     next();
-    var type = mime.lookup(`${assetPath}/${originalPath}`);
-    if (type) {
-      var charset = mime.charsets.lookup(type);
-      res.setHeader('Content-Type', type + (charset ? '; charset=' + charset : ''));
-    }
   }
 };
